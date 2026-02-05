@@ -1,0 +1,81 @@
+.cert__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cert__img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+.slick-dots {
+  bottom: -30px;
+}
+
+/* Reset default Slick styles first */
+.slick-dots li {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  width: 10px !important;
+  height: 10px !important;
+  padding: 0 !important;
+  border-radius: 50%;
+  background-color: var(--dot-color) !important;
+}
+
+/* Remove the default before pseudo-element that's causing the inner/outer circle issue */
+.slick-dots li button:before {
+  content: "" !important;
+  display: none !important;
+}
+
+.slick-dots li.slick-active button {
+  background-color: var(--dot-active-color) !important;
+  transform: scale(
+    1
+  ) !important; /* Prevents active dot from becoming too big */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .cert__container {
+      margin-inline: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cert__container {
+    max-width: 90%;
+    margin-inline: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cert__container {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Dark mode styles */
+.dark-theme {
+  --dot-color: #555555;
+  --dot-active-color: #ffffff;
+}
+
+/* Light mode styles */
+:root {
+  --dot-color: #cccccc;
+  --dot-active-color: #000000;
+}

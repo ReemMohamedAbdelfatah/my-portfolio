@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
-import Qualifications from "./components/Qualifications/Qualifications";
+import Qualifications from "./components/Qualifications/Qualification";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import Scrollup from "./components/Scrollup/Scrollup";
@@ -18,16 +18,17 @@ export default function App() {
 
      <main className="main">
         <Home />
-        {/*<About />
+        <About />
         <Skills />
         <Qualifications />
+          
         <Projects />
         <Certificates />
-        <Contact />*/}
+        <Contact />
       </main>
 
-      {/*<Footer />
-      <Scrollup />*/}
+      <Footer />
+      <Scrollup />
       
     </>
   );
