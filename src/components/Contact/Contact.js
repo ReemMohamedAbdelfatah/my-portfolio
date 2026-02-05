@@ -14,7 +14,7 @@ export default function Contact() {
         "service_ik9e9yi",
         "template_0ksyl53",
         form.current,
-        "6rE-zKKKp6K5pPS_o" // Public key as a string, not an object
+        "6rE-zKKKp6K5pPS_o", // Public key as a string, not an object
       )
       .then(
         (result) => {
@@ -22,7 +22,7 @@ export default function Contact() {
         },
         (error) => {
           console.log("Error:", error.text);
-        }
+        },
       );
     e.target.reset();
   };
@@ -64,6 +64,7 @@ export default function Contact() {
                 <a
                   href="https://api.whatsapp.com/send/?phone=201009446290&text&type=phone_number&app_absent=0"
                   target="_blank"
+                  rel="noreferrer"
                   className="contact__button"
                 >
                   Write me
@@ -81,6 +82,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/reemmuhammad"
                   className="contact__button"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Write me{" "}
                   <i className="bx bx-right-arrow-alt contact__button-icon"></i>

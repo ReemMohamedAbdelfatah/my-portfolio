@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../assets/images/logo.png";
 import "./footer.css";
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
     <>
       <footer className="footer">
         <div className="footer__container container">
-          <h1 className="footer__title">Reem</h1>
+          <div className="footer__title"><img src={logo} alt="logo" /></div>
 
           <ul className="footer__list">
             <li>

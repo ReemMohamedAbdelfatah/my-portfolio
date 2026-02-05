@@ -9,6 +9,7 @@ export default function Social() {
           href="https://www.linkedin.com/in/reemmuhammad/"
           className="home__social-icon"
           target="_blank"
+          rel="noreferrer"
         >
           <i className="uil uil-linkedin-alt"></i>
         </a>
@@ -16,10 +17,10 @@ export default function Social() {
           href="https://github.com/ReemMohamedAbdelfatah"
           className="home__social-icon"
           target="_blank"
+          rel="noreferrer"
         >
           <i className="uil uil-github-alt"></i>
         </a>
-       
       </div>
     </>
   );

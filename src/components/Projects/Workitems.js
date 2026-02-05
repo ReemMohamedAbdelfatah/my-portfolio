@@ -2,7 +2,13 @@ import React from "react";
 
 const Workitems = ({ item }) => {
   return (
-    <a href={item.demo} target="_blank" className="work__card" key={item.id}>
+    <a
+      href={item.demo}
+      target="_blank"
+      rel="noreferrer"
+      className="work__card"
+      key={item.id}
+    >
       <img src={item.image} alt={item.title} className="work__img" />
       <h3 className="work__title">{item.title}</h3>
       <p className="work__description">{item.description}</p>

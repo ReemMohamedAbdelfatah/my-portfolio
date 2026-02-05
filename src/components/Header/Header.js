@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import './header.css';
+import logo from "../../assets/images/logo.png";
 export default function Header() {
 /* ======================== Change background header =========================== */
 useEffect(() => {
@@ -62,7 +63,7 @@ useEffect(() => {
       <header className="header">
         <nav className="nav container">
           {/*Logo*/}
-          <a href="#home" className="nav__logo">Reem</a>
+          <a href="#home" className="nav__logo"><i><img src={logo} alt="Logo" /></i></a>
 
           {/*Menu*/}
           <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
