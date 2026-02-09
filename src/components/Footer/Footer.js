@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/images/logo.png";
+import logoR from "../../assets/images/logoR.png";
 import "./footer.css";
 
 export default function Footer() {
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "enabled",
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setDarkMode(document.body.classList.contains("dark-theme"));
+    });
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <footer className="footer">
         <div className="footer__container container">
-          <div className="footer__title"><img src={logo} alt="logo" /></div>
+          <div className="footer__title">
+            <img src={darkMode ? logoR : logo} alt="logo" />
+          </div>
 
           <ul className="footer__list">
             <li>
@@ -46,7 +64,6 @@ export default function Footer() {
             >
               <i className="uil uil-github-alt"></i>
             </a>
-          
           </div>
 
           <span className="footer__copy">

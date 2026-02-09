@@ -21,6 +21,12 @@
   justify-content: center;
 }
 
+.footer__title img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
 .footer__link:hover {
   color: var(--title-color-dark);
 }

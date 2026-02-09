@@ -1,37 +1,38 @@
-import React, {useState, useEffect} from "react";
-import './header.css';
+import React, { useState, useEffect } from "react";
+import "./header.css";
 import logo from "../../assets/images/logo.png";
+import logoR from "../../assets/images/logoR.png";
 export default function Header() {
-/* ======================== Change background header =========================== */
-useEffect(() => {
-  const handleScroll = () => {
-    const header = document.querySelector(".header");
-    if (window.scrollY >= 80) header.classList.add("scroll-header");
-    else header.classList.remove("scroll-header");
-  };
+  /* ======================== Change background header =========================== */
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".header");
+      if (window.scrollY >= 80) header.classList.add("scroll-header");
+      else header.classList.remove("scroll-header");
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
- /* ======================== Toggle Menu =========================== */
- const [Toggle, showMenu] = useState(false);
- const [ActiveNav, setActiveNav] = useState("#home");
+  /* ======================== Toggle Menu =========================== */
+  const [Toggle, showMenu] = useState(false);
+  const [ActiveNav, setActiveNav] = useState("#home");
 
- /* ======================== Dark Mode State =========================== */
- const [darkMode, setDarkMode] = useState(
-   localStorage.getItem("darkMode") === "enabled"
- );
+  /* ======================== Dark Mode State =========================== */
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "enabled",
+  );
 
- useEffect(() => {
-   if (darkMode) {
-     document.body.classList.add("dark-theme");
-     localStorage.setItem("darkMode", "enabled");
-   } else {
-     document.body.classList.remove("dark-theme");
-     localStorage.setItem("darkMode", "disabled");
-   }
- }, [darkMode]);
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-theme");
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      document.body.classList.remove("dark-theme");
+      localStorage.setItem("darkMode", "disabled");
+    }
+  }, [darkMode]);
 
   /* ======================== Intersection Observer =========================== */
   useEffect(() => {
@@ -44,7 +45,7 @@ useEffect(() => {
           }
         });
       },
-      { threshold: 0.3 } // Adjusted threshold value
+      { threshold: 0.3 }, // Adjusted threshold value
     );
 
     sections.forEach((section) => {
@@ -63,16 +64,25 @@ useEffect(() => {
       <header className="header">
         <nav className="nav container">
           {/*Logo*/}
-          <a href="#home" className="nav__logo"><i><img src={logo} alt="Logo" /></i></a>
+          <a href="#home" className="nav__logo">
+            <i>
+              <img src={darkMode ? logoR : logo} alt="Logo" />
+            </i>
+          </a>
 
           {/*Menu*/}
           <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
             <ul className="nav__list grid">
               <li className="nav__item">
-                <a href="#home" 
-                onClick={() => setActiveNav('#home')} 
-                className={ActiveNav === "#home" 
-                ? "nav__link active-link": "nav__link"}>
+                <a
+                  href="#home"
+                  onClick={() => setActiveNav("#home")}
+                  className={
+                    ActiveNav === "#home"
+                      ? "nav__link active-link"
+                      : "nav__link"
+                  }
+                >
                   <i className="uil uil-estate nav__icon"></i>Home
                 </a>
               </li>
@@ -142,14 +152,14 @@ useEffect(() => {
                 </a>
               </li>
             </ul>
-             {/* Close */}
-             <i
+            {/* Close */}
+            <i
               className="uil uil-times nav__close"
               onClick={() => showMenu(!Toggle)}
             ></i>
           </div>
-           {/* Dark Mode Toggle */}
-           <button
+          {/* Dark Mode Toggle */}
+          <button
             className="nav__dark-mode"
             onClick={() => setDarkMode(!darkMode)}
           >
@@ -159,12 +169,12 @@ useEffect(() => {
               <i className="uil uil-moon"></i>
             )}
           </button>
-           {/* Toggle Menu Icon */}
-           <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
+          {/* Toggle Menu Icon */}
+          <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
             <i className="uil uil-apps"></i>
           </div>
         </nav>
       </header>
     </>
-  )
+  );
 }
