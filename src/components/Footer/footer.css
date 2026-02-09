@@ -13,8 +13,8 @@
 }
 
 .footer__title {
-  width: 100px;
-  height: 100px;
+  width: 64px;
+  height: 64px;
   margin: 0 auto var(--mb-2);
   display: flex;
   align-items: center;
@@ -22,8 +22,8 @@
 }
 
 .footer__title img {
-  width: 100px;
-  height: 100px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
 }
 
