@@ -16,7 +16,7 @@ export const projectsdata = [
     category: "React.js",
     description:
       "A modern, bilingual agricultural export company website showcasing products, seasonal availability, and company information with smooth animations and parallax effects.",
-    demo: "https://agri-export-pntxfvfmo-reemmohamedabdelfatah-9263s-projects.vercel.app/",
+    demo: "https://agri-export-one.vercel.app/",
     code: "https://github.com/ReemMohamedAbdelfatah/agri-export-starter",
     hashtags: ["React", "Vite", "Tailwind"],
   },

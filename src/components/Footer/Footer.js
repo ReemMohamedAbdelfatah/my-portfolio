@@ -64,6 +64,14 @@ export default function Footer() {
             >
               <i className="uil uil-github-alt"></i>
             </a>
+            <a
+              href="https://www.behance.net/reemhamdia"
+              className="footer__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="uil uil-behance"></i>
+            </a>
           </div>
 
           <span className="footer__copy">
